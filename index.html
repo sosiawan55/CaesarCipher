@@ -1,0 +1,132 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Caesar Cipher</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+    <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #dbd4d4;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/ng-template" id="pages/home.html">
+      <div class="caesar">
+        <h1>Caesar Cipher</h1>
+        <hr>
+        <h2>Salah satu kriptografi yang paling tua dan paling sederhana adalah kriptogtafi Caesar. Menurut sejarah, ini adalah cara Julius Caesar mengirimkan surat cinta kepada kekasihnya Cleopatra. Dalam kriptografi Caesar, maka setiap huruf akan dituliskan dalam huruf lain hasil pergeseran 3 buah huruf. Kriptografi Caesar ini adalah kriptografi substitusi karena setiap huruf akan digantikan huruf lain.</h2>
+      </div>
+    </script>
+    <script type="text/ng-template" id="pages/encrypt.html">
+      <div class="container">
+        <h1>Encrypt - Caesar Cipher</h1>
+        <hr>
+        <div class="caesarCont">
+          <div class="row">
+            <div class="col-md">
+              <div class="plain" align="center">
+                <label>
+                  <b><p>Plaintext : </p></b>
+                  <textarea ng-model="enkripsi"></textarea>
+                </label>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="rot" align="center">
+                <label>
+                  <b><p>ROT / Shift Amount :</p></b>
+                  <input type="number" ng-model="shiftAmount">
+                </label>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="cipher" align="center">
+                <label>
+                  <b><p>Ciphertext : </p></b>
+                  <textarea>{{enkrip()}}</textarea>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </script>
+    <script type="text/ng-template" id="pages/decrypt.html">
+      <div class="container">
+        <h1>Decrypt - Caesar Cipher</h1>
+        <hr>
+        <div class="caesarCont">
+          <div class="row">
+            <div class="col-md">
+              <div class="cipher" align="center">
+                <label>
+                  <b><p>Ciphertext : </p></b>
+                  <textarea ng-model="deskripsi"></textarea>
+                </label>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="rot" align="center">
+                <label>
+                  <b><p>ROT / Shift Amount :</p></b>
+                  <input type="number" ng-model="shiftAmount">
+                </label>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="cipher" align="center">
+                <label>
+                  <b><p>Plaintext : </p></b>
+                  <textarea>{{deskrip()}}</textarea>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="#">CaesCip-Online</a>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#/">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#/encrypt">Encrypt</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#/decrypt">Decrypt</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container con-main">
+        <div class="contain-main">
+          <div ng-view></div>
+        </div>
+      </div>
+    </main>
+    
+
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
